@@ -11,3 +11,13 @@ def waitinggame():
     print(input('-------- Press Enter again to stop --------'))
 
     elapsed = time.perf_counter() - start
+
+    if elapsed == target:
+        print('You hit the spot!')
+    elif elapsed < target:
+        print('You were {0:.3f} seconds fast'.format(target - elapsed))
+    elif elapsed > target:
+        print('You were {0:.3f} seconds slow'.format(elapsed - target))
+
+while True:
+    waitinggame()
